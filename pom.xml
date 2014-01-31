@@ -9,6 +9,7 @@
 
 	<modules>
 		<module>server</module>
+		<module>commons</module>
 	</modules>
 
 	<properties>
@@ -40,13 +41,20 @@
 	</repositories>
 
 
-	<dependencies>
-		<dependency>
-			<groupId>taxi.driver</groupId>
-			<artifactId>server</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>taxi.driver</groupId>
+				<artifactId>server</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>taxi.driver</groupId>
+				<artifactId>commons</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>
