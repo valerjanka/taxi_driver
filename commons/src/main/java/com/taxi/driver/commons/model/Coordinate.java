@@ -1,6 +1,9 @@
 package com.taxi.driver.commons.model;
 
-public class Coordinate {
+import java.io.Serializable;
+
+public class Coordinate implements Serializable {
+	public long id;
 	public long longitude;
 	public long latitude;
 }
