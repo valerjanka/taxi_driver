@@ -31,7 +31,7 @@
 		<repository>
 			<id>www.mvnsearch.org</id>
 			<name>www.mvnsearch.org</name>
-			<url>http://www.mvnsearch.org/maven2/</url>
+			<url>http://mvnrepository.com/</url>
 		</repository>
 		<!-- <repository> -->
 		<!-- <id>search.maven.org</id> -->

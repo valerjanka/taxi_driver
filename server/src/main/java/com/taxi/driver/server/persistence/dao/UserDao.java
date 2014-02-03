@@ -1,7 +1,14 @@
 package com.taxi.driver.server.persistence.dao;
 
-import com.taxi.driver.server.model.User;
+import java.util.List;
+import com.taxi.driver.commons.model.User;
 
 public interface UserDao {
-	void addUser(User user);
+	User saveOrUpdate(User user);
+	
+	User getById(long id);
+	
+	void delete(User user);
+	
+	List<User> getAll();
 }
