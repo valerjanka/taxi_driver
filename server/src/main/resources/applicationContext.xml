@@ -13,7 +13,13 @@
  
     <context:annotation-config/>
     
+    <!-- DAO -->
     <bean id="userDao" class="com.taxi.driver.server.persistence.dao.hibernate.UserDaoImpl" />
+    <bean id="placeDao" class="com.taxi.driver.server.persistence.dao.hibernate.PlaceDaoImpl" />
+    <!-- Service -->
     <bean id="userService" class="com.taxi.driver.server.persistence.service.spring.UserServiceImpl" />
+    <bean id="placeService" class="com.taxi.driver.server.persistence.service.spring.PlaceServiceImpl" />
+    
+    <bean id="placeController" class="com.taxi.driver.server.rest.controller.PlaceController" />
     
 </beans>

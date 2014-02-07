@@ -8,39 +8,39 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.taxi.driver.commons.model.User;
-import com.taxi.driver.server.persistence.dao.UserDao;
+import com.taxi.driver.commons.model.Place;
+import com.taxi.driver.server.persistence.dao.PlaceDao;
 
-@Repository("userRepository")
+@Repository("PlaceRepository")
 @Transactional(propagation = Propagation.MANDATORY, readOnly = true)
-public class UserDaoImpl implements UserDao {
+public class PlaceDaoImpl implements PlaceDao{
 
     private SessionFactory sessionFactory;
     
     @Transactional(readOnly = false)
-	public User saveOrUpdate(User user) {
-		if(user.id == null) {
-			getSession().save(user);
+	public Place saveOrUpdate(Place Place) {
+		if(Place.id == null) {
+			getSession().save(Place);
 		} else {
-			getSession().merge(user);
+			getSession().merge(Place);
 		}
-		return user;
+		return Place;
 	}
 
     @Transactional(readOnly = false)
-	public User getById(long id) {
-		return (User) getSession().get(User.class, id);
+	public Place getById(long id) {
+		return (Place) getSession().get(Place.class, id);
 	}
 
 	@Transactional(readOnly = false)
-	public void delete(User user) {
-		getSession().delete(user);
+	public void delete(Place Place) {
+		getSession().delete(Place);
 	}
 
 	@SuppressWarnings("unchecked")
 	@Transactional(readOnly = false)
-	public List<User> getAll() {
-		return getSession().createCriteria(User.class).list();
+	public List<Place> getAll() {
+		return getSession().createCriteria(Place.class).list();
 	}
 	
     private Session getSession(){
@@ -54,4 +54,5 @@ public class UserDaoImpl implements UserDao {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
+
 }
