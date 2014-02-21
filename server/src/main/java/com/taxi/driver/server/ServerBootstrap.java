@@ -22,7 +22,8 @@ public class ServerBootstrap {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(new String[]{
-				"data-db-context.xml", "applicationContext.xml"});
+				"data-db-context.xml", 
+				"applicationContext.xml"});
 		UserService service = (UserService) ctx.getBean("userService");
 		PlaceService placeService = (PlaceService) ctx.getBean("placeService");
  

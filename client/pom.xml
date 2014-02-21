@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>client</artifactId>
 	<packaging>war</packaging>
-	<name>Taxi Drivers Map</name>
+	<name>Taxi Drivers Map Client</name>
 
 
 	<parent>
@@ -36,8 +36,14 @@
 		</dependency>
 	</dependencies>
 
-	<build>
-		<finalName>client</finalName>
-	</build>
+	   <build>
+        <finalName>TD_client</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
