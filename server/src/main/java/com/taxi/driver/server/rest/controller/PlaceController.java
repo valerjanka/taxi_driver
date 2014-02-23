@@ -3,7 +3,9 @@ package com.taxi.driver.server.rest.controller;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -20,7 +22,14 @@ public class PlaceController {
 		
 		return placeService.getByUserId(userId);
 	}
-
+	
+	@RequestMapping(value = "/place", method = {RequestMethod.PUT, RequestMethod.POST})
+	public @ResponseBody Place putPlace(
+			@RequestBody Place place) {
+		
+		return placeService.saveOrUpdate(place);
+	}
+	
 	public void setPlaceService(PlaceService placeService) {
 		this.placeService = placeService;
 	}

@@ -10,7 +10,7 @@
                            http://www.springframework.org/schema/context/spring-context.xsd"
 	default-autowire="byName">
 
-	<context:annotation-config />
+    <context:annotation-config />
 
 	<!-- DAO -->
 	<bean id="userDao"
